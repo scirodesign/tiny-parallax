@@ -3,10 +3,11 @@ A very simple and easy to use parallax plugin that is less than 2kb. I was annoy
 
 
 
-
+<br>
 <b>USEAGE :</b>
 
 jQuery("element").tinyparallax();
+<br>
 <br>
 <br>
 <b>Options :</b>
