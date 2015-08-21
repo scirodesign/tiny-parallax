@@ -61,7 +61,6 @@ if(!mobile){
 		jQuery(window.cEC).each(function(idx, parallaxObj){
 			var pos = jQuery(window).scrollTop() - jQuery(parallaxObj.elem).offset().top;
 			var parallaxAmt = Math.round((pos * parallaxObj.opts.movePercent * direction) + parallaxObj.opts.offset);
-			//console.log(pos + jQuery(ele).outerHeight());
 			jQuery(parallaxObj.elem).css({"background-position":"50%" + parallaxAmt + "px"});
 		});
 	}
