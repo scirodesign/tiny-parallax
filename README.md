@@ -24,8 +24,8 @@ There are of course some simple options to help customize the end result
 <br>
 <b>Examples with options:</b>
 
-jQuery("element").tinyparallax({<b>mobile:false, movePercent : 0.4</b>});
+jQuery("element").tinyparallax({<b>mobile:false, movePercent : 0.4</b>});<br>
 --Results in no parallax on mobile and more movement per scroll
-<br>
-jQuery("element").tinyparallax({<b>movePercent : 0.05</b>});
+<br><br>
+jQuery("element").tinyparallax({<b>movePercent : 0.05</b>});<br>
 --Results in less movement per scroll
