@@ -15,10 +15,10 @@ jQuery("element").tinyparallax();
 There are of course some simple options to help customize the end result
 
 <ul>
-<li>movePercent : Amount of parallax movement</li>
-<li>offset : manual offset to start parllax (can be negative)</li>
-<li>mobile : allow on mobile?</li>
-<li>direction : up or down "up" / "down"</li>
+<li>movePercent : Amount of parallax movement (decimal value - default is 0.1)</li>
+<li>offset : manual offset to start parallax (offset the parallax image Ex. -200)</li>
+<li>mobile : allow on mobile? (boolean value true/false)</li>
+<li>direction : up or down (takes string of "up" / "down")</li>
 </ul>
 <br>
 <br>
