@@ -19,6 +19,7 @@ There are of course some simple options to help customize the end result
 <li>offset : manual offset to start parallax (offset the parallax image Ex. -200)</li>
 <li>mobile : allow on mobile? (boolean value true/false)</li>
 <li>direction : up or down (takes string of "up" / "down")</li>
+<li>startOnVisible : Continue the parallax off screen? (takes boolean)</li>
 </ul>
 <br>
 <br>
