@@ -44,23 +44,19 @@ if(!mobile){
 	});
 }
 
+	function isScrolledIntoView(elem){
+    		var $elem = $(elem);
+    		var $window = $(window);
 
+		var docViewTop = $window.scrollTop();
+    		var docViewBottom = docViewTop + $window.height();
 
-function isScrolledIntoView(elem)
-{
-    var $elem = $(elem);
-    var $window = $(window);
+    		var elemTop = $elem.offset().top;
+    		var elemBottom = elemTop + $elem.height();
 
-    var docViewTop = $window.scrollTop();
-    var docViewBottom = docViewTop + $window.height();
-
-    var elemTop = $elem.offset().top;
-    var elemBottom = elemTop + $elem.height();
-
-    return ((( elemTop >= docViewTop) && (elemTop <= docViewBottom)) || ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)));
-	
-	//http://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling#comment38920863_488073
-}
+    		return ((( elemTop >= docViewTop) && (elemTop <= docViewBottom)) || ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)));
+		//http://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling#comment38920863_488073
+	}
 
 
 	function setupParallax(elem){
