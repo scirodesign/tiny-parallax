@@ -20,6 +20,7 @@ if(!mobile){
 		movePercent : 0.1,
 		direction : "up",
 		offset : 0,
+		startOnVisible : false,
 		mobile : true
 	}, options);
 
@@ -43,6 +44,25 @@ if(!mobile){
 	});
 }
 
+
+
+function isScrolledIntoView(elem)
+{
+    var $elem = $(elem);
+    var $window = $(window);
+
+    var docViewTop = $window.scrollTop();
+    var docViewBottom = docViewTop + $window.height();
+
+    var elemTop = $elem.offset().top;
+    var elemBottom = elemTop + $elem.height();
+
+    return ((( elemTop >= docViewTop) && (elemTop <= docViewBottom)) || ((elemBottom >= docViewTop) && (elemBottom <= docViewBottom)));
+	
+	//http://stackoverflow.com/questions/487073/check-if-element-is-visible-after-scrolling#comment38920863_488073
+}
+
+
 	function setupParallax(elem){
 		var ceTemp = "tinyLaxCE" + counter;
 		jQuery(elem).addClass(ceTemp);
@@ -57,11 +77,15 @@ if(!mobile){
 	}
 
 	function update(){
-
+		
 		jQuery(window.cEC).each(function(idx, parallaxObj){
-			var pos = jQuery(window).scrollTop() - jQuery(parallaxObj.elem).offset().top;
-			var parallaxAmt = Math.round((pos * parallaxObj.opts.movePercent * direction) + parallaxObj.opts.offset);
-			jQuery(parallaxObj.elem).css({"background-position":"50%" + parallaxAmt + "px"});
+
+				var pos = jQuery(window).scrollTop() - jQuery(parallaxObj.elem).offset().top;
+				var parallaxAmt = Math.round((pos * parallaxObj.opts.movePercent * direction) + parallaxObj.opts.offset);
+				
+				if(isScrolledIntoView(parallaxObj.elem) === true || opts.startOnVisible === false){
+					jQuery(parallaxObj.elem).css({"background-position":"50%" + parallaxAmt + "px"});
+				}
 		});
 	}
 };
